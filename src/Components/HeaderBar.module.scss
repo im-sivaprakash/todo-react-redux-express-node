@@ -1,0 +1,15 @@
+@import "../global.scss";
+
+
+.header{
+    display: block;
+    padding: 2rem 1rem;
+    background-color: $primary;
+    color: #000000;
+    .heading
+    {
+        margin: 0;
+        line-height: 1rem;
+        font-weight: 400;
+    }
+}

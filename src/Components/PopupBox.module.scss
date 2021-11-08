@@ -1,0 +1,64 @@
+@import "/src/global.scss";
+
+.window
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100vw;
+    background: #0000001a;
+    display: grid;
+    place-content: center;
+
+    .box
+    {
+        position: relative;
+        background: $secondary;
+        padding: 1rem;
+        border-radius: 10px;
+
+
+        .heading
+        {
+            margin: 0;
+        }
+        .close
+        {
+            position: absolute;
+            top: .4rem;
+            right: .4rem;
+            height: 1.5rem;
+            width: 1.5rem;
+            border: none;
+            border-radius: 50%;
+            font-size: .8rem;
+            cursor: pointer;
+        }
+        .content{
+            width: 30vw;
+            height: 20vh;
+            border: none;
+            display: block;
+            margin-top: .5rem;
+    
+            
+        }
+        
+        .updateBtn
+        {
+            background-color: $dark;
+            color: $white;
+            float: right;
+            margin-top: .8rem;
+            border: none;
+            padding: .2rem .8rem;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+
+    }
+
+
+}
