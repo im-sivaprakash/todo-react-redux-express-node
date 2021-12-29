@@ -1,22 +1,23 @@
 import React, { useState } from 'react'
+import { useAppDispatch } from '../app/hooks/useAppDispatch';
+import { todoContentUpdate } from '../Store/todoSlice';
 import style from "./PopupBox.module.scss"
 
 interface popUpProps
 {
     data : any
     isOpen : boolean
-    editData: Function
     controlPopup: Function
 }
 
 
-const PopupBox: React.FC<popUpProps> = ({isOpen,data , editData, controlPopup}) => {
-
-    const [popupData, setPopupData] = useState(data);
+const PopupBox: React.FC<popUpProps> = ({isOpen, data,  controlPopup}) => {
+    const [popupData, setPopupData] = useState(data.content);
+    const dispatch = useAppDispatch();
 
     const updateTodo = ()=>{
-        alert(popupData);
-        controlPopup(!isOpen);
+       dispatch(todoContentUpdate({_id: data._id,content : popupData}))
+       controlPopup(!isOpen);
     }
 
     const updateValue = (taskContent: string)=>{
@@ -31,7 +32,7 @@ const PopupBox: React.FC<popUpProps> = ({isOpen,data , editData, controlPopup}) 
                      <i className="fas fa-close"></i>
                 </button>
              <textarea className={style.content} defaultValue={popupData} onChange={(e)=>updateValue(e.target.value)} />
-             <button className={style.updateBtn} onClick={updateTodo}>Update</button>
+             <button className={style.updateBtn} onClick={()=>updateTodo()}>Update</button>
             </div>
         </div>
     )

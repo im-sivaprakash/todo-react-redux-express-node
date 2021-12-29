@@ -1,12 +1,18 @@
 import React from 'react'
+import { useAppDispatch } from '../app/hooks/useAppDispatch';
+import { addTodo } from '../Store/todoSlice';
 import style from './AddBar.module.scss'
+
+
 
 function AddBar() {
 
-    const addTask = (e:any)=>{
+    const dispatch = useAppDispatch();
     
+    const addTask = (e:any)=>{
         e.preventDefault();
-        alert(e.target.todo.value);
+        const content:string = e.target.todo.value;
+        dispatch(addTodo({content}))
         e.target.reset();
     }
 

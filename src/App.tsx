@@ -10,7 +10,7 @@ function App() {
     <BrowserRouter>
      <Switch>
        <Route path="/" component={Home} exact />  
-       <Route path="/completed" component={Completed} />  
+       <Route path="/completed"  component={Completed} />  
        <Route component={NotFound}/>
      </Switch>
     </BrowserRouter>
