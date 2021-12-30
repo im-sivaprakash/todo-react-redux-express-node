@@ -1,11 +1,10 @@
-import { createAsyncThunk, createEntityAdapter, createSelector, createSlice } from "@reduxjs/toolkit";
+import {  createAsyncThunk, createEntityAdapter, createSelector, createSlice } from "@reduxjs/toolkit";
 import { Todo } from "../Services/todo.service";
 import { RootState } from "./store";
 
 
 
 //-----------------Thunks-------------------------------------
-
 export const addTodo = createAsyncThunk('todo/add',async(body: any)=>{
   body.completed = false;
   const newTodo = await Todo.addTodo(body);
@@ -83,11 +82,7 @@ export  const todoSlice = createSlice({
 
 const selector = todoAdapter.getSelectors((state: RootState)=>state.todo)
 
-export const todoSelector = createSelector( selector.selectAll,(data:any)=>{
-  console.log('from Selector',data);
-  return data;
-})
-
+export const todoSelector = createSelector( selector.selectAll,(data:any)=>data);
 //------------------------------------------------------------------------
 
 export const  todoReducer = todoSlice.reducer;

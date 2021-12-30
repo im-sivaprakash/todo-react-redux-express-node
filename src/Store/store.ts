@@ -1,12 +1,15 @@
-import { configureStore } from '@reduxjs/toolkit'
+import {  configureStore } from '@reduxjs/toolkit'
 import { todoReducer } from './todoSlice';
-
-
+import logger from "redux-logger";
 
 const store = configureStore({
   reducer :{
     todo :  todoReducer
   },
+  middleware : (getDefaultMiddleware)=>{
+    return getDefaultMiddleware({thunk: true}).concat(logger)
+  }
+  
 })
 
 export type AppDispatch = typeof store.dispatch;
@@ -20,7 +23,7 @@ export default store
 
 
 
-
+//-----------Legacy Code
 // import {createStore,compose} from 'redux'
 
 // import {reducer} from './reducer'
