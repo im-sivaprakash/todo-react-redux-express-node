@@ -31,7 +31,7 @@ const Card: React.FC<cardPropInterface> = ({ controlPopup, editData, data }) => 
   return <>
   <div className={style.cardView}>
    { 
-      data?.map((todo: any) => {
+      data?.map((todo: any,index: number) => {
        return  ((path === '/completed') && todo?.completed)
           ?
             <div className={style.card} key={todo._id}>
@@ -54,7 +54,7 @@ const Card: React.FC<cardPropInterface> = ({ controlPopup, editData, data }) => 
             </div> 
             :
             ((path === '/') && !todo?.completed) ?
-            <div className={style.card} key={todo._id}>
+            <div className={style.card} key={todo._id+index}>
               <div className={style.optionHolder}>
                 <button className={style.button} onClick={() => editTask(true, {_id :todo._id,content: todo.content})}>
                   <i className="fas fa-pen"></i>

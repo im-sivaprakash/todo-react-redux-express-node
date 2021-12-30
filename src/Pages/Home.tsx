@@ -17,6 +17,9 @@ const [popUpControl,setPopUpControl]=  useState(false);
 const dispatch = useAppDispatch()
 const allTodo = useAppSelector(todoSelector)
 
+console.log(allTodo);
+
+
 useEffect(() => {
     dispatch(getTodo());
 },[dispatch])
