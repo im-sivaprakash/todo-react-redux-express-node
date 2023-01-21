@@ -1,9 +1,8 @@
 import React from 'react';
-import {BrowserRouter,Switch,Route} from 'react-router-dom';
-import Home from './Pages/Home'
+import Home from './Pages/Home';
 import Completed from './Pages/Completed';
 import NotFound from './Pages/404';
-
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 function App() {
   return (

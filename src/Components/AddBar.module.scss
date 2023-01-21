@@ -1,4 +1,4 @@
-@import "../global.scss";
+@import "./../../global.scss";
 
 .action
 {
@@ -7,8 +7,7 @@
     padding: .5rem 0 .5rem 0;
     width: 100vw;
     background: linear-gradient(0deg, rgba(0,0,0,0.8718837876947654) 0%, rgba(255,255,255,0) 100%);;
-    
-    
+
     .addInput
     {
         margin-top: 0;
